@@ -1,21 +1,15 @@
-// const heading = document.createElement("h1");
-// heading.innerHTML = " Namaste React ";
-// const root = document.getElementById("root");
-// root.appendChild(heading);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-
-
-
-
-const heading  = React.createElement("div" , {},[
-    React.createElement('div',{class:'paragraph'},[
-        React.createElement('section',{},[
-            React.createElement('p',{},'This is a paragraph.'),
-            React.createElement('p',{},'This is another paragraph.'),
-        ])
+const heading = React.createElement("div", {}, [
+  React.createElement("div", { className: "paragraph" }, [
+    React.createElement("section", {}, [
+      React.createElement("p", {}, "This is a paragraph."),
+      React.createElement("p", {}, "This is another paragraph."),
     ]),
-    React.createElement('h1',{class:'h1'},'Hello I am a Heading 1'),
+  ]),
+  React.createElement("h1", { className: "h1" }, "🚀Hello I am a Heading 🚀"),
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading)
+root.render(heading);
