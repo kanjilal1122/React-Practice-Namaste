@@ -1,0 +1,38 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo{
+    width: 100px;
+}
+
+.nav-items > ul{
+    display: flex;
+
+}
+.nav-items > ul > li {
+    font-size: large;
+    margin-right: 10px;
+    list-style-type: none;
+}
+
+/* body code start here */
+.search{
+    margin: 1rem ;
+}
+
+.res-card{
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+}
+.res-name{
+    padding: 0 10px;
+}
+.res-logo{
+    width: 180px;
+    padding: 10px 10px;
+    
+}
