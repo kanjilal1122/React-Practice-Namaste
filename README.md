@@ -18,3 +18,25 @@
 - Diagnostic 
 - HTTPS
 - Tree Shaking - remove unusal 
+- Difference dev and prod bundle
+
+
+# Namaste REact
+
+/**
+* Header
+* - Logo
+* - Nav Items 
+* Body
+* - Search
+* - Resturant Container
+*   - Restrant card 
+*     - Image
+*     - Name of Restuarent
+*     - 
+* Footer
+*  - Copyright 
+*  - Links
+*  - Address
+*  - Contents
+*/
