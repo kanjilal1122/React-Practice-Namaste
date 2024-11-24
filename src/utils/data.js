@@ -5,6 +5,7 @@
       costForTwo: 30000,
       cuisines: ["Burger", "Biriyani", "Snacks", "Fast Food"],
       delivayTime: 5,
+      rating:4.2
     },
     {
       id: 2,
@@ -12,6 +13,7 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:4.2
     },
     {
       id: 3,
@@ -19,6 +21,7 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:4
     },
     {
       id: 4,
@@ -26,6 +29,7 @@
       costForTwo: 25000,
       cuisines: ["Tea", "Rice Fries", "  Food"],
       delivayTime: 4,
+      rating:3.9
     },
     {
       id: 5,
@@ -33,6 +37,7 @@
       costForTwo: 25000,
       cuisines: ["Rooti   ", "Rice ", "Chines Food"],
       delivayTime: 14,
+      rating:3.9
     },
     {
       id: 6,
@@ -40,6 +45,7 @@
       costForTwo: 28000,
       cuisines: ["pitha", " kbddd", "Fast Food"],
       delivayTime: 4,
+      rating:4.2
     },
     {
       id: 7,
@@ -47,6 +53,7 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:4.2
     },
     {
       id: 8,
@@ -54,6 +61,7 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:3.9
     },
     {
       id: 9,
@@ -61,6 +69,7 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:2.9
     },
     {
       id: 45,
@@ -68,6 +77,7 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:4.2
     },
     {
       id: 67,
@@ -75,6 +85,7 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:5
     },
     {
       id: 86,
@@ -82,5 +93,6 @@
       costForTwo: 25000,
       cuisines: ["Burger", "French Fries", "Fast Food"],
       delivayTime: 4,
+      rating:3.5
     },
   ];

@@ -40,3 +40,20 @@
 *  - Address
 *  - Contents
 */
+
+Two type of Export and Import 
+
+- Default export and import 
+export default componentName;
+import componentName from " Path name ";
+
+
+- Named export and import 
+export componentName ;
+import { componentName } from "Path Name ";
+
+
+
+# React Hooks
+
+ 
