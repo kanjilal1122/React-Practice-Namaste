@@ -23,7 +23,7 @@
 
 # Namaste REact
 
-/**
+
 * Header
 * - Logo
 * - Nav Items 
@@ -31,9 +31,9 @@
 * - Search
 * - Resturant Container
 *   - Restrant card 
-*     - Image
-*     - Name of Restuarent
-*     - 
+*    - Image
+*    - Name of Restuarent
+*    - 
 * Footer
 *  - Copyright 
 *  - Links
@@ -41,19 +41,22 @@
 *  - Contents
 */
 
-Two type of Export and Import 
+# Two type of Export and Import 
 
-- Default export and import 
+Default export and import 
 export default componentName;
 import componentName from " Path name ";
 
 
-- Named export and import 
+Named export and import 
 export componentName ;
 import { componentName } from "Path Name ";
 
 
 
 # React Hooks
+
+- useState hooks 
+- useEffect hooks 
 
  
