@@ -3,7 +3,10 @@ body{
     margin: 0;
 }
 
-
+h4{
+    margin: 5px;
+   
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -34,7 +37,7 @@ body{
     width: 200px;
     margin: 2px;
     height: fit-content;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #C6E7FF, #d8d8dc);
     border-radius: 10px;
 }
 
@@ -51,6 +54,7 @@ body{
 
 .res-name {
     padding: 0 10px;
+    background: linear-gradient(150deg, #FAF6E3, #9EDF9C);
     margin: 0;
 }
 

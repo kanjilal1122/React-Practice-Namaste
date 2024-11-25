@@ -1,10 +1,25 @@
 import ResturantCard from "./ResturantCard";
 import { resObj } from "../utils/data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
   const data = resObj;
-  const [listOfItems, setListOfItems] = useState(data);
+  const [listOfItems, setListOfItems] = useState([]);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5743545&lng=88.3628734&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const jsonData = await data.json();
+    const apiData =
+      jsonData?.data?.cards[4]?.card?.card.gridElements?.infoWithStyle
+        ?.restaurants;
+    setListOfItems(apiData);
+  };
+
   return (
     <div className="body">
       <div className="button-container">
@@ -12,16 +27,23 @@ const Body = () => {
           <button
             className="filter-btn"
             onClick={() => {
-              const filterItems = listOfItems.filter((item) => item.rating > 4);
+              const filterItems = listOfItems.filter(
+                (data) => data?.info?.avgRating >= 4
+              );
               setListOfItems(filterItems);
             }}
           >
             {" "}
-            Top Rated Resaurant
+            Top Rated Restaurant
           </button>
         </div>
         <div>
-          <button className="filter-btn" onClick={() => setListOfItems(data)}>
+          <button
+            className="filter-btn"
+            onClick={() => {
+              location.reload();
+            }}
+          >
             {" "}
             Reset
           </button>
