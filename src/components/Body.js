@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 const Body = () => {
   const data = resObj;
   const [listOfItems, setListOfItems] = useState([]);
+  const [searchItem, setSearchItem] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -26,12 +28,36 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="button-container">
-        <div className="filter">
+        <div className="filter ">
+          <div className="search  ">
+            <input
+              type="text"
+              className="search-box filter-btn"
+              value={searchItem}
+              onChange={(e) => {
+                setSearchItem(e.target.value);
+              }}
+            />
+            <button
+              className="search-btn filter-btn"
+              onClick={() => {
+                const filterItems = listOfItems.filter((data) =>
+                  data?.info?.name
+                    .toLowerCase()
+                    .includes(searchItem.toLowerCase())
+                );
+                setListOfItems(filterItems);
+                setSearchItem("");
+              }}
+            >
+              Search
+            </button>
+          </div>
           <button
             className="filter-btn"
             onClick={() => {
               const filterItems = listOfItems.filter(
-                (data) => data?.info?.avgRating >= 4.5
+                (data) => data?.info?.avgRating > 4.2
               );
               setListOfItems(filterItems);
             }}

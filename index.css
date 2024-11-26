@@ -37,7 +37,7 @@ h4 {
 .res-card {
     width: 200px;
     margin: 2px;
-    height: fit-content;
+    height: 400px;
     background: linear-gradient(135deg, #C6E7FF, #d8d8dc);
     border-radius: 10px;
 }
@@ -92,8 +92,9 @@ h4 {
 
 
 .filter-btn {
-    margin: 10px;
-    padding: 5px;
+    margin: 2px;
+    padding: 2px;
+    width: fit-content;
     text-align: center;
     background-color: #F1F0E8;
     border: 2px solid #FF8000;
@@ -131,6 +132,8 @@ h4 {
 
 .nav-items>ul>li>button {
     cursor: pointer;
+    padding: 5px;
+    width: 70px;
     background: linear-gradient(150deg, #e4e4e4, #d8d8dc);
     border: 2px solid #1A1A1D;
     border-radius: 10px !important;
@@ -140,4 +143,9 @@ h4 {
 .nav-items>ul>li>button:hover {
     box-shadow: 2px 2px 10px #928abc;
     transition: all 0.4s ease;
+}
+
+/* search button style here */
+.filter{
+    display: flex;
 }
