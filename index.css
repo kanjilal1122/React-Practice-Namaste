@@ -1,12 +1,13 @@
-body{
+body {
     padding: 0;
     margin: 0;
 }
 
-h4{
+h4 {
     margin: 5px;
-   
+
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -107,7 +108,36 @@ h4{
     transition: all 0.4s ease;
 }
 
-.button-container{
-    display:flex;
+.button-container {
+    display: flex;
     justify-content: space-between;
+}
+
+/* Shimmer code start here  */
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer {
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(135deg, #C6E7FF, #d8d8dc);
+    border-radius: 10px;
+    margin: 10px;
+    animation: shimmer 2s infinite;
+}
+
+.nav-items>ul>li>button {
+    cursor: pointer;
+    background: linear-gradient(150deg, #e4e4e4, #d8d8dc);
+    border: 2px solid #1A1A1D;
+    border-radius: 10px !important;
+
+}
+
+.nav-items>ul>li>button:hover {
+    box-shadow: 2px 2px 10px #928abc;
+    transition: all 0.4s ease;
 }

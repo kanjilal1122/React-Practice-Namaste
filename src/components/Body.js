@@ -1,4 +1,5 @@
 import ResturantCard from "./ResturantCard";
+import Shimmer from "./Shimmer";
 import { resObj } from "../utils/data";
 import { useState, useEffect } from "react";
 
@@ -20,7 +21,9 @@ const Body = () => {
     setListOfItems(apiData);
   };
 
-  return (
+  return listOfItems.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="button-container">
         <div className="filter">
@@ -28,7 +31,7 @@ const Body = () => {
             className="filter-btn"
             onClick={() => {
               const filterItems = listOfItems.filter(
-                (data) => data?.info?.avgRating >= 4
+                (data) => data?.info?.avgRating >= 4.5
               );
               setListOfItems(filterItems);
             }}
@@ -51,7 +54,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {listOfItems.map((data) => (
-          <ResturantCard key={data.id} data={data} />
+          <ResturantCard key={data?.info?.id} data={data} />
         ))}
       </div>
     </div>
