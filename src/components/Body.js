@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const Body = () => {
   const data = resObj;
   const [listOfItems, setListOfItems] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
@@ -21,6 +22,7 @@ const Body = () => {
       jsonData?.data?.cards[4]?.card?.card.gridElements?.infoWithStyle
         ?.restaurants;
     setListOfItems(apiData);
+    setFilteredRestaurant(apiData);
   };
 
   return listOfItems.length === 0 ? (
@@ -41,12 +43,12 @@ const Body = () => {
             <button
               className="search-btn filter-btn"
               onClick={() => {
-                const filterItems = listOfItems.filter((data) =>
+                const filteredRestaurant = listOfItems.filter((data) =>
                   data?.info?.name
                     .toLowerCase()
                     .includes(searchItem.toLowerCase())
                 );
-                setListOfItems(filterItems);
+                setFilteredRestaurant(filteredRestaurant);
                 setSearchItem("");
               }}
             >
@@ -79,7 +81,7 @@ const Body = () => {
         </div>
       </div>
       <div className="res-container">
-        {listOfItems.map((data) => (
+        {filteredRestaurant.map((data) => (
           <ResturantCard key={data?.info?.id} data={data} />
         ))}
       </div>
