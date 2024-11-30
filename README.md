@@ -43,11 +43,12 @@
 
 # Two type of Export and Import 
 
+# default export component
 Default export and import 
 export default componentName;
 import componentName from " Path name ";
 
-
+# Named export component
 Named export and import 
 export componentName ;
 import { componentName } from "Path Name ";
@@ -58,5 +59,6 @@ import { componentName } from "Path Name ";
 
 - useState hooks 
 - useEffect hooks 
+- custom Hooks
 
  
