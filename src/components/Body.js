@@ -41,7 +41,7 @@ const Body = () => {
               }}
             />
             <button
-              className="search-btn filter-btn"
+              className="search-btn"
               onClick={() => {
                 const filteredRestaurant = listOfItems.filter((data) =>
                   data?.info?.name
@@ -56,7 +56,7 @@ const Body = () => {
             </button>
           </div>
           <button
-            className="filter-btn"
+            // className="filter-btn"
             onClick={() => {
               const filterItems = listOfItems.filter(
                 (data) => data?.info?.avgRating > 4.2
