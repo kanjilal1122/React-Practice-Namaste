@@ -9,8 +9,8 @@ const Footer = () => {
           <li>Instagram</li>
           <li>Twitter</li>
         </ul>
+        <AboutClass />
       </div>
-      <AboutClass />
     </div>
   );
 };

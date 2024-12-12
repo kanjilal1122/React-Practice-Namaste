@@ -7,7 +7,7 @@ const Header = () => {
       <div className="logo-container">
         <img className="logo" src={LOGO_URL} alt="Logo" />
       </div>
-      <div className="nav-items">
+      <nav className="nav-items">
         <ul>
           <li>Home</li>
           <li>About Us </li>
@@ -29,7 +29,7 @@ const Header = () => {
             </button>
           </li>
         </ul>
-      </div>
+      </nav>
     </div>
   );
 };
