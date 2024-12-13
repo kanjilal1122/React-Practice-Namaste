@@ -61,4 +61,15 @@ import { componentName } from "Path Name ";
 - useEffect hooks 
 - custom Hooks
 
- 
+ # React  Router 
+ - creaseBrowserRouter
+ - RouterProvider
+ - Link
+ - Outlet
+
+
+
+ # 2 types of routing 
+  - Client side routing 
+  - Server side routing
+  
