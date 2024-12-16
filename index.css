@@ -165,3 +165,11 @@ h4 {
 .filter{
     display: flex;
 }
+
+
+/* Restaurant link style */
+.restLink{
+    color: #1A1A1D;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
