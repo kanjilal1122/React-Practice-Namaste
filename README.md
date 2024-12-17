@@ -72,4 +72,11 @@ import { componentName } from "Path Name ";
  # 2 types of routing 
   - Client side routing 
   - Server side routing
+
+
+  # Class base Component 
+   - Component
+   - constructor
+   - super 
+   
   

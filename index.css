@@ -34,7 +34,7 @@ h4 {
     margin: 1rem;
 }
 
-.search-btn{
+.search-btn {
     margin: 2px;
     padding: 2px;
     width: fit-content;
@@ -162,14 +162,41 @@ h4 {
 }
 
 /* search button style here */
-.filter{
+.filter {
     display: flex;
 }
 
 
 /* Restaurant link style */
-.restLink{
+.restLink {
     color: #1A1A1D;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+
+/* User class and User component style here */
+.user-card {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    background: linear-gradient(135deg, #C6E7FF, #d8d8dc);
+    border: 2px solid #928abc;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.about-component {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+/* about component avatar iamge style code here */
+.user-avatar{
+    max-width: 20rem;
+    height: 10em;
+    border-radius: 20%;
+    margin: 5px;
 }
