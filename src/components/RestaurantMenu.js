@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { RESTAURANT_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 export default function RestaurantMenu() {
-  const [resInfo, setResInfo] = useState(null);
+  const [resInfo, setResInfo] = useState();
   const { resId } = useParams();
 
   useEffect(() => fetchMenu, []);
@@ -32,7 +32,8 @@ export default function RestaurantMenu() {
         {itemCards.map((item) => (
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} - Price{" "}
-            {item?.card?.info?.defaultPrice / 100}
+            {item?.card?.info?.defaultPrice / 100 ||
+              item?.card?.info?.price / 100}
           </li>
         ))}
       </ul>

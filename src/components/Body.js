@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { resObj } from "../utils/data";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { MAIN_PAGE_URL } from "../utils/constants";
 
 const Body = () => {
   const data = resObj;
@@ -15,9 +16,7 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5743545&lng=88.3628734&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(MAIN_PAGE_URL);
     const jsonData = await data.json();
     const apiData =
       jsonData?.data?.cards[4]?.card?.card.gridElements?.infoWithStyle
@@ -56,7 +55,7 @@ const Body = () => {
               Search
             </button>
           </div>
-          <button
+          {/* <button
             // className="filter-btn"
             onClick={() => {
               const filterItems = listOfItems.filter(
@@ -67,7 +66,7 @@ const Body = () => {
           >
             {" "}
             Top Rated Restaurant
-          </button>
+          </button> */}
         </div>
         <div>
           <button
