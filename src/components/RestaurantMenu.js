@@ -6,9 +6,7 @@ import Shimmer from "./Shimmer";
 export default function RestaurantMenu() {
   const { resId } = useParams();
   const resInfo = useFetchMenuCard(resId);
-  console.log("inside restaurant ", resId);
   if (resInfo === null) return <Shimmer />;
-  console.log("resInfo", resInfo);
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[2]?.card?.card?.info;
   const { itemCards } =

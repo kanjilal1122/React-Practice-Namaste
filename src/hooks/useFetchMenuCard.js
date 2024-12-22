@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { RESTAURANT_URL } from "../utils/constants";
 const useFetchMenuCard = (resId) => {
   const [resInfo, setResInfo] = useState(null);
-  console.log(" Outside", resId);
   useEffect(() => {
     fetchMenu();
   }, []);
