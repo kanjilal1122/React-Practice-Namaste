@@ -1,21 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { RESTAURANT_URL } from "../utils/constants";
+import useFetchMenuCard from "../hooks/useFetchMenuCard";
+
 import Shimmer from "./Shimmer";
 export default function RestaurantMenu() {
-  const [resInfo, setResInfo] = useState();
   const { resId } = useParams();
-
-  useEffect(() => fetchMenu, []);
-
-  const fetchMenu = async () => {
-    const response = await fetch(RESTAURANT_URL + resId);
-    const menuData = await response.json();
-    setResInfo(menuData?.data);
-  };
-
-  if (!resInfo) return <Shimmer />;
-
+  const resInfo = useFetchMenuCard(resId);
+  console.log("inside restaurant ", resId);
+  if (resInfo === null) return <Shimmer />;
+  console.log("resInfo", resInfo);
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[2]?.card?.card?.info;
   const { itemCards } =
@@ -27,9 +20,9 @@ export default function RestaurantMenu() {
         {" "}
         {name} - Rs {costForTwoMessage}{" "}
       </h2>
-      <h2>{cuisines.join(" ,")}</h2>
+      <h2>{cuisines?.join(" ,")}</h2>
       <ul>
-        {itemCards.map((item) => (
+        {itemCards?.map((item) => (
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} - Price{" "}
             {item?.card?.info?.defaultPrice / 100 ||
