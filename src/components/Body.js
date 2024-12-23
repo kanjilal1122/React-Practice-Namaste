@@ -25,7 +25,7 @@ const Body = () => {
     setFilteredRestaurant(apiData);
   };
 
-  return listOfItems.length === 0 ? (
+  return listOfItems?.length === 0 ? (
     <Shimmer />
   ) : (
     <div className="body">
