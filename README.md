@@ -80,4 +80,10 @@ import { componentName } from "Path Name ";
    - super 
    
 # Custom Hooks 
+ - useFetchResturantMenu
+ - useOnlineStatus
+
+# Dynamic Import 
+# Lazy Loadding 
+# Suspense 
    - 
