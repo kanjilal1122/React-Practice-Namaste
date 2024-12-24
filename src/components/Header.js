@@ -5,11 +5,11 @@ import useOnlineStatus from "../hooks/useOnlineStatus";
 const Header = () => {
   const [isLogin, setIsLogin] = useState("Login");
   const isOnline = useOnlineStatus();
-// sticky top-0
+
   return (
-    <div className="flex justify-between border-black border-solid border-2 shadow-xl ">
+    <div className="flex justify-between bg-slate-100 border-black border-solid border-2 shadow-xl ">
       <div className="w-20 ">
-        <img className="" src={LOGO_URL} alt="Logo" />
+        <img className=" mix-blend-multiply" src={LOGO_URL} alt="Logo" />
       </div>
       <nav className="flex justify-between p-4">
         <ul className="flex">
