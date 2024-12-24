@@ -13,13 +13,13 @@ export default function RestaurantMenu() {
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 
   return (
-    <div className="menu">
-      <h2>
+    <div className="flex flex-col p-5 text-center ">
+      <h2 className=" m-3 text-2xl font-black">
         {" "}
         {name} - Rs {costForTwoMessage}{" "}
       </h2>
-      <h2>{cuisines?.join(" ,")}</h2>
-      <ul>
+      <h2 className=" p-2 font-bold ">{cuisines?.join(" ,")}</h2>
+      <ul className=" m-2 text-base font-semibold ">
         {itemCards?.map((item) => (
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} - Price{" "}

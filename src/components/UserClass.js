@@ -25,15 +25,14 @@ class UserClass extends React.Component {
 
   render() {
     const { name, location, email, avatar_url } = this.state.userInfo;
-    // console.log(" child render method called");
-
+  
     return (
-      <div className="user-card">
-        <h2>Name: {name}</h2>
-        <img className="user-avatar" alt="Image" src={avatar_url} />
-        <h3>Age: 30</h3>
-        <h4>{email || "Email: raju@gmail.com"}</h4>
-        <h4>Location: {location || " India "}</h4>
+      <div className=" m-4 p-2 bg-white rounded-md">
+        <h2 className=" text-lg font-bold ">Name: {name}</h2>
+        <img className=" rounded-md w-40 m-4" alt="Image" src={avatar_url} />
+        <h3 className="font-extralight ">Age: 30</h3>
+        <h4 className="font-extralight ">{email || "Email: raju@gmail.com"}</h4>
+        <h4 className="font-extralight ">Location: {location || " India "}</h4>
       </div>
     );
   }

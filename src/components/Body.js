@@ -29,19 +29,20 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="button-container">
-        <div className="filter ">
-          <div className="search  ">
+      <div className="flex justify-between ">
+        <div className="flex">
+          <div className="m-2">
             <input
               type="text"
-              className="search-box filter-btn"
+              className="m-1 p-2 w-fit-content text-black  text-center rounded-full border-blue-700 border-solid border-2 cursor-pointer  bg-white-200 hover:border-pink-500"
+              placeholder="Search Restaurant"
               value={searchItem}
               onChange={(e) => {
                 setSearchItem(e.target.value);
               }}
             />
             <button
-              className="search-btn"
+              className="m-1 p-2 w-fit-content text-black  text-center rounded-full border-blue-700 border-solid border-2 cursor-pointer  bg-white-200 hover:shadow-lg"
               onClick={() => {
                 const filteredRestaurant = listOfItems.filter((data) =>
                   data?.info?.name
@@ -55,22 +56,10 @@ const Body = () => {
               Search
             </button>
           </div>
-          {/* <button
-            // className="filter-btn"
-            onClick={() => {
-              const filterItems = listOfItems.filter(
-                (data) => data?.info?.avgRating > 4.2
-              );
-              setListOfItems(filterItems);
-            }}
-          >
-            {" "}
-            Top Rated Restaurant
-          </button> */}
         </div>
         <div>
           <button
-            className="filter-btn"
+            className="m-1 p-1 w-fit-content text-black  text-center rounded-full border-blue-700 border-solid border-2 cursor-pointer  bg-white-200 hover:shadow-xl hover:border-sky-300"
             onClick={() => {
               location.reload();
             }}
@@ -80,11 +69,15 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className=" flex flex-wrap  justify-around ">
         {filteredRestaurant.map((data) => (
-          <Link className="restLink" to={"/restaurants/"+data?.info?.id} key={data?.info?.id} >
+          <Link
+            className="restLink"
+            to={"/restaurants/" + data?.info?.id}
+            key={data?.info?.id}
+          >
             {" "}
-            <ResturantCard  data={data} />
+            <ResturantCard data={data} />
           </Link>
         ))}
       </div>

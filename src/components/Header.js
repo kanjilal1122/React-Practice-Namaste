@@ -5,35 +5,29 @@ import useOnlineStatus from "../hooks/useOnlineStatus";
 const Header = () => {
   const [isLogin, setIsLogin] = useState("Login");
   const isOnline = useOnlineStatus();
-
+// sticky top-0
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="Logo" />
+    <div className="flex justify-between border-black border-solid border-2 shadow-xl ">
+      <div className="w-20 ">
+        <img className="" src={LOGO_URL} alt="Logo" />
       </div>
-      <nav className="nav-items">
-        <ul>
-          <li>Online Status : {isOnline ? " ✔" : "❌"} </li>
-          <li>
-            <Link className="restLink" to="/">
-              Home
-            </Link>
+      <nav className="flex justify-between p-4">
+        <ul className="flex">
+          <li className="p-2 ">Online Status : {isOnline ? " ✔" : "❌"} </li>
+          <li className="p-2 cursor-pointer">
+            <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link className="restLink" to="/about">
-              About Us
-            </Link>{" "}
+          <li className="p-2 cursor-pointer">
+            <Link to="/about">About Us</Link>{" "}
           </li>
-          <li>
-            <Link className="restLink" to="/contacts">
-              Contact us
-            </Link>
+          <li className="p-2 cursor-pointer">
+            <Link to="/contacts">Contact us</Link>
           </li>
-          <li>Cart</li>
-          <li>
+          <li className="p-2 cursor-pointer">Cart</li>
+          <li className="p-2 cursor-pointer">
             {" "}
             <button
-              className="login-btn"
+              className=" bg-slate-100 px-2   border-green-300 border-solid border-2 rounded-full shadow-lg"
               onClick={() => {
                 {
                   isLogin === "Login"

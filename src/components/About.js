@@ -8,9 +8,9 @@ class About extends React.Component {
 
   render() {
     return (
-      <div className="about-detail">
-        <h1>About Us Page</h1>
-        <div className="about-component">
+      <div className="flex justify-center mt-6 bg-slate-100 h-dvh">
+        <div className="">
+          <h1 className=" font-black text-center text-4xl text-sky-500">About Us Page</h1>
           <UserClass />
         </div>
       </div>
