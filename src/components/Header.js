@@ -2,10 +2,14 @@ import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../hooks/useOnlineStatus";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const Header = () => {
   const [isLogin, setIsLogin] = useState("Login");
   const isOnline = useOnlineStatus();
-
+  const userDefaultName = useContext(UserContext)
+  console.log(userDefaultName);
+  
   return (
     <div className="flex justify-between bg-slate-100 border-black border-solid border-2 shadow-xl ">
       <div className="w-20 ">
@@ -39,6 +43,7 @@ const Header = () => {
               {isLogin}
             </button>
           </li>
+          <li className="p-2 cursor-pointer">{userDefaultName.loggedUser}</li>
         </ul>
       </nav>
     </div>

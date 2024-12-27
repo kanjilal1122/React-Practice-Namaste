@@ -7,15 +7,19 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Loading from "./components/Loading";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./utils/UserContext";
+import { useState } from "react";
 
 const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
+  const [userName, setUserName] = useState("Ajay");
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-      {/* <Footer /> */}
-    </div>
+    <UserContext.Provider value={{ loggedUser: userName ,setUserName  }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 

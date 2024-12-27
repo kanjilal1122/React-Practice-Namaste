@@ -1,16 +1,20 @@
-import ResturantCard from "./ResturantCard";
+import ResturantCard, { withPromotedLabel } from "./ResturantCard";
+
 import Shimmer from "./Shimmer";
 import { resObj } from "../utils/data";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { MAIN_PAGE_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const data = resObj;
   const [listOfItems, setListOfItems] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchItem, setSearchItem] = useState("");
+  const RestaurantHOC = withPromotedLabel(ResturantCard);
 
+  const { setUserName, loggedUser } = useContext(UserContext);
   useEffect(() => {
     fetchData();
   }, []);
@@ -28,9 +32,9 @@ const Body = () => {
   return listOfItems?.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="flex justify-between ">
-        <div className="flex">
+    <div className="">
+      <div className="flex justify-between mx-6 ">
+        <div className="">
           <div className="m-2">
             <input
               type="text"
@@ -55,6 +59,12 @@ const Body = () => {
             >
               Search
             </button>
+            <input
+              type="text"
+              value={loggedUser}
+              onChange={ (e)=> setUserName(e.target.value)}
+              className=" bg-gray-200 text-black m-1 p-2 rounded-md "
+            />
           </div>
         </div>
         <div>
@@ -69,15 +79,18 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className=" flex flex-wrap  justify-around ">
+      <div className=" flex flex-wrap  justify-around bg-red-50  ">
         {filteredRestaurant.map((data) => (
           <Link
             className="restLink"
             to={"/restaurants/" + data?.info?.id}
             key={data?.info?.id}
           >
-            {" "}
-            <ResturantCard data={data} />
+            {data?.info?.id % 2 == 0 ? (
+              <RestaurantHOC data={data} />
+            ) : (
+              <ResturantCard data={data} />
+            )}
           </Link>
         ))}
       </div>

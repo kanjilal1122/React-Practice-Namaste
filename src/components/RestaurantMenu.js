@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetchMenuCard from "../hooks/useFetchMenuCard";
+import RestuarantCategory from "./RestaurantCategory";
 
 import Shimmer from "./Shimmer";
 export default function RestaurantMenu() {
@@ -11,6 +12,16 @@ export default function RestaurantMenu() {
     resInfo?.cards[2]?.card?.card?.info;
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  console.log(itemCards);
+
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (card) => {
+        card?.["card"]?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+      }
+    );
+  console.log("categories", categories);
 
   return (
     <div className="flex flex-col p-5 text-center ">
@@ -18,7 +29,8 @@ export default function RestaurantMenu() {
         {" "}
         {name} - Rs {costForTwoMessage}{" "}
       </h2>
-      <h2 className=" p-2 font-bold ">{cuisines?.join(" ,")}</h2>
+      <p className=" p-2 font-bold ">{cuisines?.join(" ,")}</p>
+
       <ul className=" m-2 text-base font-semibold ">
         {itemCards?.map((item) => (
           <li key={item?.card?.info?.id}>
@@ -31,3 +43,12 @@ export default function RestaurantMenu() {
     </div>
   );
 }
+
+{
+}
+
+// {/* accordion header */}
+// <RestuarantCategory  />
+// {/* {categories?.map((category) => {
+//   return <RestuarantCategory data={category} />;
+// })} */}
