@@ -9,17 +9,21 @@ import Loading from "./components/Loading";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import { useState } from "react";
+import { Provider } from "react-redux";
+import { appStore } from "./utils/store";
 
 const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   const [userName, setUserName] = useState("Ajay");
   return (
-    <UserContext.Provider value={{ loggedUser: userName ,setUserName  }}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
