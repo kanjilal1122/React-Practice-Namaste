@@ -62,7 +62,7 @@ const Body = () => {
             <input
               type="text"
               value={loggedUser}
-              onChange={ (e)=> setUserName(e.target.value)}
+              onChange={(e) => setUserName(e.target.value)}
               className=" bg-gray-200 text-black m-1 p-2 rounded-md "
             />
           </div>

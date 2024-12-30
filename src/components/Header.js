@@ -6,6 +6,7 @@ import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, removeItem, clearCart } from "../utils/cartSlice";
+import Button from "./Button";
 const Header = () => {
   const [isLogin, setIsLogin] = useState("Login");
   const isOnline = useOnlineStatus();
@@ -37,37 +38,18 @@ const Header = () => {
             Cart{cartItems.length}
           </li>
           <li className="p-2 cursor-pointer font-bold">
-            {" "}
-            <button
-              className=" bg-slate-100 px-2   border-green-300 border-solid border-2 rounded-full shadow-lg"
-              onClick={() => dispatch(addItem())}
-            >
-              {" "}
-              Add+
-            </button>
+            <Button onClick={() => dispatch(addItem())}>Add+</Button>
+          </li>
+          <li className="p-2 cursor-pointer font-bold">
+            <Button onClick={() => dispatch(removeItem())}>Remove</Button>
           </li>
           <li className="p-2 cursor-pointer font-bold">
             {" "}
-            <button
-              className=" bg-slate-100 px-2   border-green-300 border-solid border-2 rounded-full shadow-lg"
-              onClick={() => dispatch(removeItem())}
-            >
-              Remove
-            </button>
-          </li>
-          <li className="p-2 cursor-pointer font-bold">
-            {" "}
-            <button
-              className=" bg-slate-100 px-2   border-green-300 border-solid border-2 rounded-full shadow-lg"
-              onClick={() => dispatch(clearCart())}
-            >
-              Clear
-            </button>
+            <Button onClick={() => dispatch(clearCart())}>Clear</Button>
           </li>
           <li className="p-2 cursor-pointer">
             {" "}
-            <button
-              className=" bg-slate-100 px-2   border-green-300 border-solid border-2 rounded-full shadow-lg"
+            <Button
               onClick={() => {
                 {
                   isLogin === "Login"
@@ -77,7 +59,7 @@ const Header = () => {
               }}
             >
               {isLogin}
-            </button>
+            </Button>
           </li>
           <li className="p-2 cursor-pointer">{userDefaultName.loggedUser}</li>
         </ul>
